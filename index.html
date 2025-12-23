@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="src/output.css">
+  <link rel="stylesheet" href="./assets/fonts/font.css">
+  <script src="./app.js" defer></script>
+  <title>Typing speed test</title>
+</head>
+<body class="bg-[#121212]">
+   <div class="main-container min-w-[375px] px-4 py-5">
+    <div class="header-section">
+      <div class="logo-section">
+        <img class="" src="assets/images/logo-small.svg" alt="">
+        <img class="hidden" src="assets/images/logo-large.svg" alt="">
+      </div>
+      <div class="best-score-section">
+        <img src="assets/images/icon-personal-best.svg" alt="">
+        <div class="best-score-text">
+          <span>Best : </span>
+          <span class="user-score">92 WPM</span>
+        </div>
+      </div>
+    </div>
+    <div class="container-content-section">
+      <div class="status-navbar">
+        <div class="typing-info-container">
+          <div class="wpm-container">
+            <span>WPM : </span>
+            <span>0</span>
+          </div>
+          <div class="accuracy-container">
+            <span>Accuracy</span>
+            <span>100%</span>
+          </div>
+          <div class="time-container">
+            <span>Time</span>
+            <span>0:60</span>
+          </div>
+        </div>
+        <div class="typing-mode-container">
+          <div class="difficulty-contianer">
+            <div class="mobile-mode-container">
+              <div class="difficulty-mode-container">
+                <div class="selected-difficulty">
+                  <span class="selected-difficulty-mode">Hard</span>
+                  <img src="assets/images/icon-down-arrow.svg" alt="">
+                </div>
+                <from class="difficfromty-menu hidden">
+                  <ul>
+                    <li>
+                      <label for="easy-mode">Easy</label>
+                      <input type="radio" name="difficulty" id="easy-mode">
+                    </li>
+                    <li>
+                      <label for="medium-mode">Medium</label>
+                      <input type="radio" name="difficulty" id="medium-mode">
+                    </li>
+                    <li>
+                      <label for="hard-mode">Hard</label>
+                      <input type="radio" name="difficulty" id="hard-mode">
+                    </li>
+                  </ul>
+                </from>
+              </div>
+              <div class="time-mode-container">
+                <div class="selected-time">
+                  <span class="selected-time-mode">Time(60s)</span>
+                  <img src="assets/images/icon-down-arrow.svg" alt="">
+                </div>
+                <form class="time-menu hidden">
+                  <ul>
+                    <li>
+                      <label for="time-mode">Time(60s)</label>
+                      <input type="radio" name="time" id="time-mode">
+                    </li>
+                    <li>
+                      <label for="unlimited-mode">Passage</label>
+                      <input type="radio" name="time" id="unlimited-mode">
+                    </li>
+                  </ul>
+                </form>
+              </div>
+            </div>
+            <div class="desktop-mode-container">
+              <div class="difficulty-container">
+                <span>Difficulty : </span>
+                <div class="difficulty-mode-container">
+                  <div class="easy-mode">
+                    <span>Easy</span>
+                  </div>
+                  <div class="medium-mode">
+                    <span>Medium</span>
+                  </div>
+                  <div class="hard-mode">
+                    <span>Hard</span>
+                  </div>
+                </div>
+              </div>
+              <div class="time-container">
+                <span>Mode : </span>
+                <div class="difficulty-mode-container">
+                  <div class="time-mode">
+                    <span>Time(60s)</span>
+                  </div>
+                  <div class="unlimited-mode">
+                    <span>Passage</span>
+                  </div>
+                </div>
+              </div>
+              <div class="time-mode-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="typing-section">
+        <div class="start-layout">
+          <button class="start-btn">Start Typing Test</button>
+          <p>Or click space and start typing </p>
+        </div>
+        <div class="typing-text-section">
+          <!-- At first user should click on start button to see the text -->
+          <!-- base on difficulty mode typing text is change by js -->
+        </div>
+        
+      </div>
+      <div class="restart-section">
+          <button class="restart-btn">Restart Test</button>
+          <img src="assets/images/icon-restart.svg" alt="">
+        </div>
+    </div>
+    <div class="result-page">
+      <img class="tick-icon" src="assets/images/icon-completed.svg" alt="">
+      <img class="prize-icon hidden" src="assets/images/icon-new-pb.svg" alt="">
+      <div class="result-title">
+        <h2 class="result-page-title">Baseline Stablished!</h2>
+        <p class="more-description-text">You've set the bar. Now the real challage begins-time to beat it.</p>
+      </div>
+      <div class="typing-result-container">
+        <div class="wpm-container">
+          <span>WPM</span>
+          <span class="wpm-qunatity">85</span>
+        </div>
+        <div class="accuracy-container">
+          <span>Accuracy </span>
+          <span class="accuracy-percentage">100%</span>
+        </div>
+        <div class="characters-contaienr">
+          <span>Characters</span>
+          <span>120</span>
+          <span>/</span>
+          <span class="wrong-character-quantity">5</span>
+        </div>
+      </div>
+      <div class="try-agin-button">
+        <button class="try-again-btn">Beat This Score</button>
+        <img src="assets/images/icon-restart.svg" alt="">
+      </div>
+      <div class="normal-decoration-images">
+        <img src="assets/images/pattern-star-1.svg" alt="">
+        <img src="assets/images/pattern-star-2.svg" alt="">
+      </div>
+      <div class="high-score-decoration hidden">
+        <img src="assets/images/pattern-confetti.svg" alt="">
+      </div>
+    </div>
+   </div>
+</body>
+</html>
