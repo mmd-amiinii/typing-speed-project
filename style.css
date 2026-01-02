@@ -1,0 +1,30 @@
+.active-mode {
+    color: #4CA5FF;
+    border-color: #4CA5FF !important;
+}
+
+.underline {
+    text-decoration: underline;
+    text-decoration-color: #C74754;
+}
+
+.correct {
+    color: #4CD67C !important;
+}
+
+.wrong {
+    color: #C74754;
+}
+
+.caret {
+    animation: blink 0.8s linear infinite;
+}
+
+@keyframes blink {
+    25% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 0;
+    }
+}

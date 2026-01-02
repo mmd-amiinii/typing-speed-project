@@ -9,163 +9,163 @@
   <script src="./app.js" defer></script>
   <title>Typing speed test</title>
 </head>
-<body class="bg-[#121212]">
-   <div class="main-container min-w-[375px] px-4 py-5">
-    <div class="header-section">
+<body class="bg-[#121212] relative h-screen">
+   <div class="main-container min-w-[375px] px-4 py-5 lg:px-10 relative">
+    <div class="header-section w-full flex justify-between items-center">
       <div class="logo-section">
-        <img class="" src="assets/images/logo-small.svg" alt="">
-        <img class="hidden" src="assets/images/logo-large.svg" alt="">
+        <img class="md:hidden" src="assets/images/logo-small.svg" alt="">
+        <img class="hidden md:block" src="assets/images/logo-large.svg" alt="">
       </div>
-      <div class="best-score-section">
+      <div class="best-score-section flex gap-2">
         <img src="assets/images/icon-personal-best.svg" alt="">
         <div class="best-score-text">
-          <span>Best : </span>
-          <span class="user-score">92 WPM</span>
+          <span class="text-[#949496]">Best : </span>
+          <span class="user-score text-white">0 WPM</span>
         </div>
       </div>
     </div>
     <div class="container-content-section">
-      <div class="status-navbar">
-        <div class="typing-info-container">
-          <div class="wpm-container">
-            <span>WPM : </span>
-            <span>0</span>
+      <div class="status-navbar mt-8 lg:flex lg:justify-between relative after:absolute after:w-full after:h-[1px] after:bg-[#3A3A3A] after:bottom-[-20px]">
+        <div class="typing-info-container min-w-[348px] lg:w-[40%] h-[70px] lg:h-[30px] grid grid-cols-3 lg:grid-cols-5 text-center divide-x divide-[#3A3A3A] ">
+          <div class="wpm-container flex flex-col lg:flex-row lg:items-center pr-[15px] gap-2">
+            <span class="text-lg lg:text-base font-light text-[#949496]">WPM: </span>
+            <span class="wpm-counter text-[24px] lg:text-lg font-bold text-white"> 0</span>
           </div>
-          <div class="accuracy-container">
-            <span>Accuracy</span>
-            <span>100%</span>
+          <div class="accuracy-container flex flex-col lg:flex-row lg:items-center lg:col-span-2 lg:justify-center gap-2">
+            <span class="text-lg lg:text-base font-light text-[#949496]">Accuracy:</span>
+            <span class="accuracy-percentage text-[24px] lg:text-lg font-bold text-white">0%</span>
           </div>
-          <div class="time-container">
-            <span>Time</span>
-            <span>0:60</span>
+          <div class="time-container flex flex-col lg:flex-row lg:items-center lg:col-span-1 lg:justify-center lg:pl-[40px]  gap-2">
+            <span class="text-lg lg:text-base font-light text-[#949496]">Time:</span>
+            <span class="time-counter text-[24px] lg:text-lg font-bold text-white">0:60</span>
           </div>
         </div>
-        <div class="typing-mode-container">
-          <div class="difficulty-contianer">
-            <div class="mobile-mode-container">
-              <div class="difficulty-mode-container">
-                <div class="selected-difficulty">
-                  <span class="selected-difficulty-mode">Hard</span>
+        <div class="typing-mode-container mt-6 lg:mt-0 lg:w-[50%] relative">
+          <div class="moods-contianer">
+            <div class="mobile-mode-container grid grid-cols-2 gap-3 text-white font-light lg:hidden">
+              <div class="difficulty-mode-container relative">
+                <div class="selected-difficulty h-[30px] flex justify-center items-center gap-2 border border-[#949496] rounded-lg cursor-pointer" tabindex="1">
+                  <span class="selected-difficulty-mode">Easy</span>
                   <img src="assets/images/icon-down-arrow.svg" alt="">
                 </div>
-                <from class="difficfromty-menu hidden">
-                  <ul>
-                    <li>
-                      <label for="easy-mode">Easy</label>
-                      <input type="radio" name="difficulty" id="easy-mode">
+                <from class="difficfromty-menu absolute w-full rounded-lg left-0 bottom-[-100px] bg-[#262626] z-30 hidden" tabindex="1">
+                  <ul class="grid grid-rows-3 divide-y divide-[#3A3A3A] items-center">
+                    <li class="w-full py-[15px] pl-3 h-[20px] flex items-center gap-2">
+                      <label class="order-2 cursor-pointer" for="easy-mode">Easy</label>
+                      <input class="difficulty-drop-down-items order-1" type="radio" name="difficulty" id="easy-mode" checked>
                     </li>
-                    <li>
-                      <label for="medium-mode">Medium</label>
-                      <input type="radio" name="difficulty" id="medium-mode">
+                    <li class="w-full py-[15px] pl-3 h-[20px] flex items-center gap-2">
+                      <label class="order-2 cursor-pointer" for="medium-mode">Medium</label>
+                      <input class="difficulty-drop-down-items order-1" type="radio" name="difficulty" id="medium-mode">
                     </li>
-                    <li>
-                      <label for="hard-mode">Hard</label>
-                      <input type="radio" name="difficulty" id="hard-mode">
+                    <li class="w-full py-[15px] pl-3 h-[20px] flex items-center gap-2">
+                      <label class="order-2 cursor-pointer" for="hard-mode">Hard</label>
+                      <input class="difficulty-drop-down-items order-1" type="radio" name="difficulty" id="hard-mode">
                     </li>
                   </ul>
                 </from>
               </div>
-              <div class="time-mode-container">
-                <div class="selected-time">
+              <div class="time-mode-container relative">
+                <div class="selected-time h-[30px] flex justify-center items-center gap-2 border border-[#949496] rounded-lg cursor-pointer">
                   <span class="selected-time-mode">Time(60s)</span>
                   <img src="assets/images/icon-down-arrow.svg" alt="">
                 </div>
-                <form class="time-menu hidden">
-                  <ul>
-                    <li>
-                      <label for="time-mode">Time(60s)</label>
-                      <input type="radio" name="time" id="time-mode">
+                <form class="time-menu absolute w-full left-0 bottom-[-68px] bg-[#262626] rounded-lg hidden z-30" tabindex="1">
+                  <ul class="grid divide-y divide-[#3A3A3A]">
+                    <li class="flex items-center gap-2 py-[15px] pl-3 h-[20px] w-full mobile-time-mode">
+                      <label class="order-2 cursor-pointer" for="time-mode">Time(60s)</label>
+                      <input class="time-drop-down-items order-1" type="radio" name="time" id="time-mode" checked>
                     </li>
-                    <li>
-                      <label for="unlimited-mode">Passage</label>
-                      <input type="radio" name="time" id="unlimited-mode">
+                    <li class="flex items-center gap-2 py-[15px] pl-3 h-[20px] w-full mobile-passage-mode">
+                      <label class="order-2 cursor-pointer" for="unlimited-mode">Passage</label>
+                      <input class="time-drop-down-items order-1" type="radio" name="time" id="unlimited-mode">
                     </li>
                   </ul>
                 </form>
               </div>
             </div>
-            <div class="desktop-mode-container">
-              <div class="difficulty-container">
-                <span>Difficulty : </span>
-                <div class="difficulty-mode-container">
-                  <div class="easy-mode">
-                    <span>Easy</span>
+            <div class="desktop-mode-container text-white hidden lg:flex lg:absolute lg:right-0 lg:items-center shrink-0">
+              <div class="difficulty-container h-full flex gap-3 items-center relative after:content-[''] after:w-[1px] after:h-[30px] after:absolute after:right-[-20px] after:bg-[#3A3A3A] shrink-0">
+                <span class="text-sm">Difficulty : </span>
+                <div class="difficulty-mode-container flex gap-3">
+                  <div class="easy-mode active-mode px-2 py-1 border border-[#949496] rounded-lg flex justify-center items-center hover:border-[#4CA5FF] hover:text-[#4CA5FF] transition-colors cursor-pointer">
+                    <span class="text-sm">Easy</span>
                   </div>
-                  <div class="medium-mode">
-                    <span>Medium</span>
+                  <div class="medium-mode text-sm px-2 py-1 border border-[#949496] rounded-lg flex justify-center items-center hover:border-[#4CA5FF] hover:text-[#4CA5FF] transition-colors cursor-pointer">
+                    <span class="text-sm">Medium</span>
                   </div>
-                  <div class="hard-mode">
-                    <span>Hard</span>
-                  </div>
-                </div>
-              </div>
-              <div class="time-container">
-                <span>Mode : </span>
-                <div class="difficulty-mode-container">
-                  <div class="time-mode">
-                    <span>Time(60s)</span>
-                  </div>
-                  <div class="unlimited-mode">
-                    <span>Passage</span>
+                  <div class="hard-mode text-sm px-2 py-1 border border-[#949496] rounded-lg flex justify-center items-center hover:border-[#4CA5FF] hover:text-[#4CA5FF] transition-colors cursor-pointer">
+                    <span class="text-sm">Hard</span>
                   </div>
                 </div>
               </div>
-              <div class="time-mode-container"></div>
+              <div class="time-container flex ml-[40px] items-center gap-3 shrink-0">
+                <span class="text-sm">Mode : </span>
+                <div class="difficulty-mode-container flex gap-3">
+                  <div class="time-mode active-mode px-2 py-1 border border-[#949496] rounded-lg flex justify-center items-center hover:border-[#4CA5FF] hover:text-[#4CA5FF] transition-colors cursor-pointer">
+                    <span class="text-sm">Time(60s)</span>
+                  </div>
+                  <div class="unlimited-mode px-2 py-1 border border-[#949496] rounded-lg flex justify-center items-center hover:border-[#4CA5FF] hover:text-[#4CA5FF] transition-colors cursor-pointer">
+                    <span class="text-sm">Passage</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="typing-section">
-        <div class="start-layout">
-          <button class="start-btn">Start Typing Test</button>
-          <p>Or click space and start typing </p>
+      <div class="typing-section mt-[40px] min-h-[570px] relative after:absolute after:w-full after:h-[1px] after:bg-[#3A3A3A] after:bottom-[-20px]">
+        <div class="start-layout absolute w-full h-full backdrop-blur flex flex-col justify-center items-center gap-4">
+          <button class="cursor-pointer start-btn bg-[#167DFE] px-4 py-2 rounded-lg text-lg font-medium text-white">Start Typing Test</button>
+          <p class="text-white text-lg">Or press ' space key ' to start typing </p>
         </div>
-        <div class="typing-text-section">
+        <div class="typing-text-section text-[#3A3A3A] p-3 leading-[36px] lg:leading-[45px]">
           <!-- At first user should click on start button to see the text -->
           <!-- base on difficulty mode typing text is change by js -->
+            
         </div>
-        
+        <input class="typing-input absolute opacity-0 pointer-events-none" type="text">
+        <div class="caret w-[2px] h-[20px] sm:h-[25px] absolute bg-[#949496] top-[20px] left-[11px] hidden"></div>
       </div>
-      <div class="restart-section">
-          <button class="restart-btn">Restart Test</button>
+      <div class="restart-section z-50 mt-[40px] inline-flex items-center gap-3 relative left-[50%] translate-x-[-50%] bg-[#262626] text-white px-5 py-3 rounded-lg text-lg font-medium">
+          <button class="cursor-pointer restart-btn">Restart Test</button>
           <img src="assets/images/icon-restart.svg" alt="">
         </div>
     </div>
-    <div class="result-page">
-      <img class="tick-icon" src="assets/images/icon-completed.svg" alt="">
-      <img class="prize-icon hidden" src="assets/images/icon-new-pb.svg" alt="">
-      <div class="result-title">
-        <h2 class="result-page-title">Baseline Stablished!</h2>
-        <p class="more-description-text">You've set the bar. Now the real challage begins-time to beat it.</p>
+    <div class="result-page mt-8 pt-8 flex flex-col items-center relative hidden">
+      <div class="tick-icon size-[40px] bg-[url('/assets/images/icon-completed.svg')] bg-cover relative after:content-[''] after:absolute after:size-[50px] after:border-[10px] after:border-[#4cd67c3b] after:rounded-full after:left-[-5px] after:top-[-5px] before:content-[''] before:absolute before:size-[60px] before:border-[10px] before:border-[#4cd67c1c] before:rounded-full before:left-[-10px] before:top-[-10px]"></div>
+      <img class="prize-icon size-[70px] hidden" src="assets/images/icon-new-pb.svg" alt="">
+      <div class="result-title text-center mt-10">
+        <h2 class="result-page-title text-[24px] text-white font-medium">Baseline Stablished!</h2>
+        <p class="more-description-text text-[#949496] mt-1">You've set the bar. Now the real challage begins-time to beat it.</p>
       </div>
-      <div class="typing-result-container">
-        <div class="wpm-container">
-          <span>WPM</span>
-          <span class="wpm-qunatity">85</span>
+      <div class="typing-result-container w-full mt-10 grid gap-5 sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-7 sm:justify-center">
+        <div class="wpm-container w-full flex flex-col gap-1 text-[#949496] px-5 py-3 border border-[#3A3A3A] rounded-lg md:col-start-2 xl:col-start-3">
+          <span class="text-lg">WPM :</span>
+          <span class="wpm-qunatity text-xl font-semibold text-white">0</span>
         </div>
-        <div class="accuracy-container">
-          <span>Accuracy </span>
-          <span class="accuracy-percentage">100%</span>
+        <div class="accuracy-container w-full flex flex-col gap-1 text-[#949496] px-5 py-3 border border-[#3A3A3A] rounded-lg">
+          <span class="text-lg">Accuracy :</span>
+          <span class="result_accuracy text-xl font-semibold text-white">0%</span>
         </div>
-        <div class="characters-contaienr">
-          <span>Characters</span>
-          <span>120</span>
-          <span>/</span>
-          <span class="wrong-character-quantity">5</span>
+        <div class="characters-contaienr w-full flex flex-col gap-1 text-[#949496] px-5 py-3 border border-[#3A3A3A] rounded-lg">
+          <span class="text-lg">Characters :</span>
+          <div>
+            <span class="user-correct-character-quantity text-xl font-semibold text-[#4CD67C]">120</span>
+            <span class="text-xl font-semibold">/</span>
+            <span class="user-wrong-character-quantity text-xl font-semibold text-[#C74754]">5</span>
+          </div>
         </div>
       </div>
-      <div class="try-agin-button">
-        <button class="try-again-btn">Beat This Score</button>
-        <img src="assets/images/icon-restart.svg" alt="">
-      </div>
-      <div class="normal-decoration-images">
-        <img src="assets/images/pattern-star-1.svg" alt="">
-        <img src="assets/images/pattern-star-2.svg" alt="">
-      </div>
-      <div class="high-score-decoration hidden">
-        <img src="assets/images/pattern-confetti.svg" alt="">
+      <div class="try-again-button px-4 py-3 flex gap-2 justify-center items-center bg-white text-black mt-10 rounded-lg">
+        <button class="cursor-pointer try-again-btn font-medium">Beat This Score</button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20">
+          <path fill="#000" d="M1.563 1.281h.949c.246 0 .422.211.422.457l-.07 3.446a8.6 8.6 0 0 1 7.277-3.868c4.816 0 8.718 3.938 8.718 8.72-.035 4.816-3.937 8.683-8.718 8.683a8.86 8.86 0 0 1-5.871-2.215.446.446 0 0 1 0-.633l.703-.703c.14-.14.386-.14.562 0 1.23 1.09 2.813 1.723 4.606 1.723A6.88 6.88 0 0 0 17.03 10c0-3.797-3.093-6.89-6.89-6.89-2.813 0-5.203 1.687-6.293 4.078l4.43-.106c.245 0 .456.176.456.422v.95c0 .245-.21.421-.421.421h-6.75a.406.406 0 0 1-.422-.422v-6.75c0-.21.175-.422.422-.422"/>
+        </svg>
+        </svg>
       </div>
     </div>
    </div>
+   <div class="new-record-decoration z-[-1] absolute w-full h-[200px] sm:h-[300px] bottom-0 bg-[url('/assets/images/pattern-confetti.svg')] bg-contain hidden"></div>
 </body>
 </html>
