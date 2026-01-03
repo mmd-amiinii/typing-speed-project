@@ -183,10 +183,11 @@ function disapear_start_layout() {
 start_btn.addEventListener("click", disapear_start_layout) 
 // start typing (when space button clicked)
 window.addEventListener('keydown', (event)=> {
-    if(event.code == "Space" && !start_layout.classList.contains('hidden')) {
-        disapear_start_layout()
+    if(event.code === "Space" && !start_layout.classList.contains('hidden')) {
+        event.preventDefault();   // ← مهم
+        disapear_start_layout();
     }
-})
+});
 
 
 // typing environment 
@@ -225,29 +226,50 @@ const typing_environment_position = typing_environment.getBoundingClientRect();
 let is_finished = false;
 
 function checkCharacter(letter) {
-    if(letter == currnt_text[index]){
+    const typed = letter.toLowerCase();
+    const expected = currnt_text[index].toLowerCase();
+
+    if (typed === expected) {
         typing_text_children[index].classList.add("correct");
-        move_caret(index+1)
-        index++
+    } else {
+        typing_text_children[index].classList.add("wrong", "underline");
     }
-    else {
-        typing_text_children[index].classList.add("wrong","underline");
-        move_caret(index+1)       
-        index++
-    }
+
+    move_caret(index + 1);
+    index++;
 }
 // set keydown event on input and send user's input to checkCharacter function
-typing_input.addEventListener("keydown", (event)=> {
-    if(event.key == "Shift" || event.key == "Enter") return;
-    if(event.key == "Backspace") {
-        if(index > 0) {
-            index--
+typing_input.addEventListener("input", (event) => {
+    const value = event.target.value;
+    if (!value) return;
+
+    const char = value[value.length - 1];
+
+    checkCharacter(char);
+
+    event.target.value = "";
+});
+
+typing_input.addEventListener("keydown", (event) => {
+    if (event.key === "Backspace") {
+        event.preventDefault();
+        if (index > 0) {
+            index--;
+            typing_text_children[index].classList.remove(
+                "underline",
+                "correct",
+                "wrong"
+            );
+            move_caret(index);
         }
-        typing_text_children[index].classList.remove("underline", "correct", "wrong");
-        move_caret(index)
-        return
-    }    
-    checkCharacter(event.key);
+    }
+});
+
+typing_input.addEventListener('focus', ()=> {
+    document.body.style.overflow = 'hidden';
+})
+typing_input.addEventListener('blur', ()=> {
+    document.body.style.overflow = 'hidden';
 })
 
 // move typing symbol
