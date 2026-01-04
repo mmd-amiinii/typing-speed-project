@@ -251,6 +251,7 @@ typing_input.addEventListener("input", (event) => {
 });
 
 typing_input.addEventListener("keydown", (event) => {
+   
     if (event.key === "Backspace") {
         event.preventDefault();
         if (index > 0) {
